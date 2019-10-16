@@ -6,6 +6,8 @@ const hbs = require('hbs')
 const forecast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
 
+//process.env.PORT here PORT is env var where heroku set port no . so when PORT val available PORT will be used else 3000 as default
+const port = process.env.PORT || 3000
 
 //console.log(__dirname)
 //console.log(__filename)
@@ -132,7 +134,7 @@ app.get('*', (req, res) => {
 
 
 //start the server
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up on port 3000')
 })
 
